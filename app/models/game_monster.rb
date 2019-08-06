@@ -1,0 +1,2 @@
+class GameMonster < ApplicationRecord
+end

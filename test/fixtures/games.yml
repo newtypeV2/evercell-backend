@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  map_id: 1
+  description: MyString
+  started: false
+
+two:
+  map_id: 1
+  description: MyString
+  started: false

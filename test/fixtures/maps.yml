@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  x_map_size: 1
+  y_map_size: 1
+
+two:
+  name: MyString
+  x_map_size: 1
+  y_map_size: 1

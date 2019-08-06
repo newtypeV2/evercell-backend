@@ -1,0 +1,2 @@
+class MapTile < ApplicationRecord
+end

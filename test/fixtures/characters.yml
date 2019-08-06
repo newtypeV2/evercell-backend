@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  hp: 1
+  max_hp: 1
+  attack_damage: 1
+  attack_range: 1
+
+two:
+  hp: 1
+  max_hp: 1
+  attack_damage: 1
+  attack_range: 1

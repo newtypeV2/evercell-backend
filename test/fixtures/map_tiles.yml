@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  map_id: 1
+  tile_id: 1
+  x_coordinate: 1
+  y_coordinate: 1
+
+two:
+  map_id: 1
+  tile_id: 1
+  x_coordinate: 1
+  y_coordinate: 1
