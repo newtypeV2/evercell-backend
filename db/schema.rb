@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_06_162943) do
+ActiveRecord::Schema.define(version: 2019_08_06_204444) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,17 +20,20 @@ ActiveRecord::Schema.define(version: 2019_08_06_162943) do
     t.integer "game_id"
     t.integer "x_coordinate"
     t.integer "y_coordinate"
+    t.integer "hp"
+    t.integer "max_hp"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "characters", force: :cascade do |t|
-    t.integer "hp"
     t.integer "max_hp"
     t.integer "attack_damage"
     t.integer "attack_range"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.string "name"
   end
 
   create_table "game_monsters", force: :cascade do |t|
@@ -40,6 +43,8 @@ ActiveRecord::Schema.define(version: 2019_08_06_162943) do
     t.integer "y_coordinate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "hp"
+    t.integer "max_hp"
   end
 
   create_table "games", force: :cascade do |t|
@@ -69,7 +74,6 @@ ActiveRecord::Schema.define(version: 2019_08_06_162943) do
 
   create_table "monsters", force: :cascade do |t|
     t.string "name"
-    t.integer "hp"
     t.integer "max_hp"
     t.integer "attack_damage"
     t.datetime "created_at", null: false

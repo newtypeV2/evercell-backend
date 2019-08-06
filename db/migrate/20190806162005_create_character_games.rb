@@ -5,6 +5,8 @@ class CreateCharacterGames < ActiveRecord::Migration[5.2]
       t.integer :game_id
       t.integer :x_coordinate
       t.integer :y_coordinate
+      t.integer :hp
+      t.integer :max_hp
 
       t.timestamps
     end
