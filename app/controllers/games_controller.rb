@@ -36,7 +36,7 @@ class GamesController < ApplicationController
                     :only => [:name,:x_map_size,:y_map_size],
                     :include => {
                         :map_tiles => {
-                            :only => [:x_coordinate, :y_coordinate],
+                            :only => [:id,:x_coordinate, :y_coordinate],
                             :include => {
                                 :tile => {
                                     :only => [:name]

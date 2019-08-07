@@ -35,11 +35,13 @@ skel = Monster.find_or_create_by(name: "Skeleton", max_hp:2, attack_damage:1, at
 
 testzone = Map.find_or_create_by(name:"Test Area", x_map_size:10, y_map_size:10)
 
+widetestzone = Map.find_or_create_by(name: "Ultra Wide Test Area", x_map_size: 80, y_map_size: 32)
+
 x_cords=0
 y_cords=0
-while(x_cords<10) do
+while(x_cords<testzone.x_map_size) do
     puts "X: #{x_cords}"
-    while(y_cords<10) do
+    while(y_cords<testzone.y_map_size) do
         puts "Y: #{y_cords}" 
         MapTile.find_or_create_by(map_id: testzone.id, x_coordinate: x_cords, y_coordinate: y_cords, tile_id:(rand(1..8)))
         y_cords += 1
@@ -48,9 +50,26 @@ while(x_cords<10) do
     x_cords += 1
 end
 
+x_cords=0
+y_cords=0
+while(x_cords<widetestzone.x_map_size) do
+    puts "X: #{x_cords}"
+    while(y_cords<widetestzone.y_map_size) do
+        puts "Y: #{y_cords}" 
+        MapTile.find_or_create_by(map_id: widetestzone.id, x_coordinate: x_cords, y_coordinate: y_cords, tile_id:(rand(1..8)))
+        y_cords += 1
+    end
+    y_cords = 0
+    x_cords += 1
+end
+
 gametest = Game.find_or_create_by(map_id: testzone.id, description:"An Area where you can test stuff.", started: true)
 
+widegametest = Game.find_or_create_by(map_id: widetestzone.id, description: "Ultrawide test area.", started: true)
+
 CharacterGame.find_or_create_by(character_id: stasis.id, game_id: gametest.id,x_coordinate:1, y_coordinate:1,hp: stasis.max_hp, max_hp: stasis.max_hp)
+CharacterGame.find_or_create_by(character_id: stasis.id, game_id: widegametest.id,x_coordinate:1, y_coordinate:1,hp: stasis.max_hp, max_hp: stasis.max_hp)
+
 
 GameMonster.find_or_create_by(game_id: gametest.id, monster_id: skel.id,x_coordinate: 10, y_coordinate: 0, hp:skel.max_hp, max_hp:skel.max_hp)
 GameMonster.find_or_create_by(game_id: gametest.id, monster_id: skel.id,x_coordinate: 0, y_coordinate: 10, hp:skel.max_hp, max_hp:skel.max_hp)
