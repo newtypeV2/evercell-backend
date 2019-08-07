@@ -29,9 +29,9 @@ tile_wtm = Tile.find_or_create_by(name: "wall_top_mid", passover:false)
 tile_wtr = Tile.find_or_create_by(name: "wall_top_right", passover:false)
 tile_wm = Tile.find_or_create_by(name: "wall_mid", passover:false)
 
-big_orc = Monster.find_or_create_by(name: "Big Orc", max_hp:20, attack_damage:8)
-masked_orc = Monster.find_or_create_by(name: "Masked Orc", max_hp:5, attack_damage:4)
-skel = Monster.find_or_create_by(name: "Skeleton", max_hp:2, attack_damage:1)
+big_orc = Monster.find_or_create_by(name: "Big Orc", max_hp:20, attack_damage:8, attack_range: 1)
+masked_orc = Monster.find_or_create_by(name: "Masked Orc", max_hp:5, attack_damage:4, attack_range: 1)
+skel = Monster.find_or_create_by(name: "Skeleton", max_hp:2, attack_damage:1, attack_range: 1)
 
 testzone = Map.find_or_create_by(name:"Test Area", x_map_size:10, y_map_size:10)
 
