@@ -9,7 +9,8 @@
 
 gian = User.create!(username: "gian", password:"password")
 
-stasis = Character.find_or_create_by(name:"Stasis", max_hp:40, attack_damage:10, attack_range:1,user_id: gian.id)
+stasis = Character.find_or_create_by(name:"Stasis", max_hp:40, attack_damage:10, attack_range:1,user_id: gian.id, race: "human")
+gneisenau = Character.find_or_create_by(name:"Gneisenau", max_hp:40, attack_damage:10, attack_range:1,user_id: gian.id, race: "lizard")
 
 floor_1 = Tile.find_or_create_by(name: "floor_1", passover:true)
 floor_2 = Tile.find_or_create_by(name: "floor_2", passover:true)
@@ -35,7 +36,7 @@ skel = Monster.find_or_create_by(name: "Skeleton", max_hp:2, attack_damage:1, at
 
 testzone = Map.find_or_create_by(name:"Test Area", x_map_size:10, y_map_size:10)
 
-widetestzone = Map.find_or_create_by(name: "Ultra Wide Test Area", x_map_size: 80, y_map_size: 32)
+widetestzone = Map.find_or_create_by(name: "Ultra Wide Test Area", x_map_size: 48, y_map_size: 16)
 
 x_cords=0
 y_cords=0
@@ -68,7 +69,7 @@ gametest = Game.find_or_create_by(map_id: testzone.id, description:"An Area wher
 widegametest = Game.find_or_create_by(map_id: widetestzone.id, description: "Ultrawide test area.", started: true)
 
 CharacterGame.find_or_create_by(character_id: stasis.id, game_id: gametest.id,x_coordinate:1, y_coordinate:1,hp: stasis.max_hp, max_hp: stasis.max_hp)
-CharacterGame.find_or_create_by(character_id: stasis.id, game_id: widegametest.id,x_coordinate:1, y_coordinate:1,hp: stasis.max_hp, max_hp: stasis.max_hp)
+CharacterGame.find_or_create_by(character_id: gneisenau.id, game_id: widegametest.id,x_coordinate:1, y_coordinate:1,hp: gneisenau.max_hp, max_hp: gneisenau.max_hp)
 
 
 GameMonster.find_or_create_by(game_id: gametest.id, monster_id: skel.id,x_coordinate: 10, y_coordinate: 0, hp:skel.max_hp, max_hp:skel.max_hp)
