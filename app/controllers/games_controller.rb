@@ -33,17 +33,17 @@ class GamesController < ApplicationController
                     }
                 },
                 :map => {
-                    :only => [:name,:x_map_size,:y_map_size],
-                    :include => {
-                        :map_tiles => {
-                            :only => [:id,:x_coordinate, :y_coordinate],
-                            :include => {
-                                :tile => {
-                                    :only => [:passover,:name]
-                                }
-                            }
-                        }
-                    }
+                    :only => [:name,:x_map_size,:y_map_size,:id],
+                    # :include => {
+                    #     :map_tiles => {
+                    #         :only => [:id,:x_coordinate, :y_coordinate],
+                    #         :include => {
+                    #             :tile => {
+                    #                 :only => [:passover,:name]
+                    #             }
+                    #         }
+                    #     }
+                    # }
                     
                 }
             }
