@@ -72,6 +72,6 @@ CharacterGame.find_or_create_by(character_id: stasis.id, game_id: gametest.id,x_
 CharacterGame.find_or_create_by(character_id: gneisenau.id, game_id: widegametest.id,x_coordinate:1, y_coordinate:1,hp: gneisenau.max_hp, max_hp: gneisenau.max_hp)
 
 
-GameMonster.find_or_create_by(game_id: gametest.id, monster_id: skel.id,x_coordinate: 10, y_coordinate: 0, hp:skel.max_hp, max_hp:skel.max_hp)
-GameMonster.find_or_create_by(game_id: gametest.id, monster_id: skel.id,x_coordinate: 0, y_coordinate: 10, hp:skel.max_hp, max_hp:skel.max_hp)
-GameMonster.find_or_create_by(game_id: gametest.id, monster_id: skel.id,x_coordinate: 10, y_coordinate: 10, hp:skel.max_hp, max_hp:skel.max_hp)
+GameMonster.find_or_create_by(game_id: gametest.id, monster_id: skel.id,x_coordinate: 9, y_coordinate: 0, hp:skel.max_hp, max_hp:skel.max_hp)
+GameMonster.find_or_create_by(game_id: gametest.id, monster_id: skel.id,x_coordinate: 0, y_coordinate: 9, hp:skel.max_hp, max_hp:skel.max_hp)
+GameMonster.find_or_create_by(game_id: gametest.id, monster_id: skel.id,x_coordinate: 9, y_coordinate: 9, hp:skel.max_hp, max_hp:skel.max_hp)
