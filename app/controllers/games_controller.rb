@@ -17,7 +17,7 @@ class GamesController < ApplicationController
             :except => [:created_at,:updated_at],
             :include => {
                 :character_games => {
-                    :only => [:x_coordinate,:y_coordinate,:hp,:max_hp],
+                    :only => [:x_coordinate,:y_coordinate,:hp,:max_hp,:id],
                     :include => {
                         :character => {
                             :except => [:created_at, :updated_at] 
@@ -25,10 +25,10 @@ class GamesController < ApplicationController
                     }
                 },
                 :game_monsters => {
-                    :only => [:x_coordinate,:y_coordinate,:hp,:max_hp],
+                    :only => [:x_coordinate,:y_coordinate,:hp,:max_hp,:id],
                     :include => {
                         :monster => {
-                            :except => [:created_at, :updated_at, :max_hp, :id] 
+                            :except => [:created_at, :updated_at, :max_hp] 
                         }
                     }
                 },
@@ -39,7 +39,7 @@ class GamesController < ApplicationController
                             :only => [:id,:x_coordinate, :y_coordinate],
                             :include => {
                                 :tile => {
-                                    :only => [:name]
+                                    :only => [:passover,:name]
                                 }
                             }
                         }
