@@ -97,7 +97,7 @@ CharacterGame.find_or_create_by(character_id: stasis.id, game_id: gametest.id,x_
 CharacterGame.find_or_create_by(character_id: gneisenau.id, game_id: widegametest.id,x_coordinate:1, y_coordinate:1,hp: gneisenau.max_hp, max_hp: gneisenau.max_hp)
     #20x20-2Char-4Monsters
 CharacterGame.find_or_create_by(character_id: stasis.id, game_id: playerstest.id,x_coordinate:1, y_coordinate:1,hp: stasis.max_hp, max_hp: stasis.max_hp)
-CharacterGame.find_or_create_by(character_id: hazard.id, game_id: playerstest.id,x_coordinate:0, y_coordinate:0,hp: hazard.max_hp, max_hp: hazard.max_hp)
+CharacterGame.find_or_create_by(character_id: hazard.id, game_id: playerstest.id,x_coordinate:2, y_coordinate:2,hp: hazard.max_hp, max_hp: hazard.max_hp)
 
 #Monster Instance Seed
     #10x10-1Char-3Monsters
