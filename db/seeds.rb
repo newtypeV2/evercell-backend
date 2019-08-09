@@ -108,4 +108,4 @@ GameMonster.find_or_create_by(game_id: gametest.id, monster_id: skel.id,x_coordi
 GameMonster.find_or_create_by(game_id: playerstest.id, monster_id: skel.id,x_coordinate: 5, y_coordinate: 17, hp:skel.max_hp, max_hp:skel.max_hp)
 GameMonster.find_or_create_by(game_id: playerstest.id, monster_id: masked_orc.id,x_coordinate: 15, y_coordinate: 15, hp:masked_orc.max_hp, max_hp:masked_orc.max_hp)
 GameMonster.find_or_create_by(game_id: playerstest.id, monster_id: skel.id,x_coordinate: 9, y_coordinate: 19, hp:skel.max_hp, max_hp:skel.max_hp)
-GameMonster.find_or_create_by(game_id: playerstest.id, monster_id: ogre.id,x_coordinate: 17, y_coordinate: 16, hp:ogre.max_hp, max_hp:ogre.max_hp)
+GameMonster.find_or_create_by(game_id: playerstest.id, monster_id: masked_orc.id,x_coordinate: 17, y_coordinate: 16, hp:masked_orc.max_hp, max_hp:masked_orc.max_hp)
