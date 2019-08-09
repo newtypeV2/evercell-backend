@@ -43,4 +43,13 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+
+  ip=Socket.ip_address_list.detect{|intf| intf.ipv4_private?}
+  # config.action_cable.mount_path = '/cable'
+  # config.action_cable.url = "ws://localhost:3500/cable"
+  # config.action_cable.url = "ws://"+ip.ip_address+":3500/cable"
+  Rails.application.config.action_cable.allow_same_origin_as_host = false
+  config.action_cable.allowed_request_origins = [/http:\/\/*/, /https:\/\/*/]
+
 end

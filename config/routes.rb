@@ -5,5 +5,8 @@ Rails.application.routes.draw do
   get '/games/:id', to: 'games#show'
   
   get '/characters/:id', to: 'characters#show'
-  patch '/charactergames/:id', to: 'charactergames#update'
+  patch '/charactergames/:id', to: 'character_games#update'
+
+  mount ActionCable.server => '/cable'
+  
 end
