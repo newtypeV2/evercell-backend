@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
             end
     end
     
-end
+# end
 
 
 private
@@ -23,6 +23,7 @@ private
             :except => [:created_at, :updated_at,:password_digest],
             :include => {
                 :characters=>{}
+            }
         }
     end 
 
