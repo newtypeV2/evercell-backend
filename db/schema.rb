@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_07_201048) do
+ActiveRecord::Schema.define(version: 2019_08_10_150959) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2019_08_07_201048) do
     t.integer "max_hp"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "direction", default: "right"
   end
 
   create_table "characters", force: :cascade do |t|

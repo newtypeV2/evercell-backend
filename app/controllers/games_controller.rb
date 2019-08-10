@@ -17,7 +17,7 @@ class GamesController < ApplicationController
             :except => [:created_at,:updated_at],
             :include => {
                 :character_games => {
-                    :only => [:x_coordinate,:y_coordinate,:hp,:max_hp,:id],
+                    :only => [:x_coordinate,:y_coordinate,:hp,:max_hp,:id,:direction],
                     :include => {
                         :character => {
                             :except => [:created_at, :updated_at] 
