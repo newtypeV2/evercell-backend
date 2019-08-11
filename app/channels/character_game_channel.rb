@@ -9,8 +9,8 @@ class CharacterGameChannel < ApplicationCable::Channel
   end
 
   def receive(data)
-    playerInstance = CharacterGame.find(data["id"])
-    playerInstance.update(x_coordinate:data["x_coordinate"] ,y_coordinate:data["y_coordinate"], direction: data["direction"])
+    # playerInstance = CharacterGame.find(data["id"])
+    # playerInstance.update(x_coordinate:data["x_coordinate"] ,y_coordinate:data["y_coordinate"], direction: data["direction"])
     ActionCable.server.broadcast('character_game', data)
   end
 
