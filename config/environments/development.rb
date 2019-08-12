@@ -56,7 +56,8 @@ Rails.application.configure do
   
   # config.action_cable.mount_path = '/cable'
   # config.action_cable.url = "ws://localhost:3500/cable"
-  # config.action_cable.url = "ws://"+ip.ip_address+":3500/cable"
+  # config.action_cable.url = "ws://localhost:3334/cable" 
+  # config.action_cable.url = "ws://"+ip.ip_address+":5000/cable"
   Rails.application.config.action_cable.allow_same_origin_as_host = false
   config.action_cable.allowed_request_origins = [/http:\/\/*/, /https:\/\/*/]
 
