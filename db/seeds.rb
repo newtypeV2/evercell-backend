@@ -57,7 +57,7 @@ skel = Monster.find_or_create_by(name: "skeleton", max_hp:2, attack_damage:1, at
 testzone = Map.find_or_create_by(name:"Test Area", x_map_size:10, y_map_size:10)
 widetestzone = Map.find_or_create_by(name: "Ultra Wide Test Area", x_map_size: 48, y_map_size: 16)
 playersTestZone = Map.find_or_create_by(name:"2 Player Sim", x_map_size:15, y_map_size:15)
-pvp_test_zone = Map.find_or_create_by(name:"Stress Test", x_map_size: 32, y_map_size: 32)
+pvp_test_zone = Map.find_or_create_by(name:"Stress Test", x_map_size: 16, y_map_size: 16)
 
 x_cords=0
 y_cords=0
@@ -145,15 +145,15 @@ GameMonster.find_or_create_by(game_id: playerstest.id, monster_id: masked_orc.id
     while(x_cords<pvp_test_zone.x_map_size) do
         while(y_cords<pvp_test_zone.y_map_size) do
             if(x_cords == 0 && y_cords == 0)
-                CharacterGame.find_or_create_by(character_id: g.id, game_id: stress_test.id, x_coordinate:0, y_coordinate:0,hp: g.max_hp, max_hp: g.max_hp)
-            elsif(x_cords == 0 && y_cords == 31)
-                CharacterGame.find_or_create_by(character_id: r.id, game_id: stress_test.id, x_coordinate:0, y_coordinate:31,hp: r.max_hp, max_hp: r.max_hp)
-            elsif(x_cords == 31 && y_cords == 0)
-                CharacterGame.find_or_create_by(character_id: p.id, game_id: stress_test.id, x_coordinate:31, y_coordinate:0,hp: p.max_hp, max_hp: p.max_hp)
-            elsif(x_cords == 31 && y_cords == 31)
-                CharacterGame.find_or_create_by(character_id: m.id, game_id: stress_test.id, x_coordinate:31, y_coordinate:31,hp: m.max_hp, max_hp: m.max_hp)
+                CharacterGame.find_or_create_by(character_id: g.id, game_id: stress_test.id, x_coordinate:x_cords, y_coordinate:y_cords,hp: g.max_hp, max_hp: g.max_hp)
+            elsif(x_cords == 0 && y_cords == 15)
+                CharacterGame.find_or_create_by(character_id: r.id, game_id: stress_test.id, x_coordinate:x_cords, y_coordinate:y_cords,hp: r.max_hp, max_hp: r.max_hp)
+            elsif(x_cords == 15 && y_cords == 0)
+                CharacterGame.find_or_create_by(character_id: p.id, game_id: stress_test.id, x_coordinate:x_cords, y_coordinate:y_cords,hp: p.max_hp, max_hp: p.max_hp)
             elsif(x_cords == 15 && y_cords == 15)
-                CharacterGame.find_or_create_by(character_id: n.id, game_id: stress_test.id, x_coordinate:15, y_coordinate:15,hp: n.max_hp, max_hp: n.max_hp)
+                CharacterGame.find_or_create_by(character_id: m.id, game_id: stress_test.id, x_coordinate:x_cords, y_coordinate:y_cords,hp: m.max_hp, max_hp: m.max_hp)
+            elsif(x_cords == 8 && y_cords == 8)
+                CharacterGame.find_or_create_by(character_id: n.id, game_id: stress_test.id, x_coordinate:x_cords, y_coordinate:y_cords,hp: n.max_hp, max_hp: n.max_hp)
             # elsif(y_cords % 2 == 0 && x_cords % 2 == 1)
             #     GameMonster.find_or_create_by(game_id: stress_test.id, monster_id: masked_orc.id,x_coordinate: x_cords, y_coordinate: y_cords, hp:masked_orc.max_hp, max_hp:masked_orc.max_hp)
             # elsif(y_cords % 2 == 1 && x_cords % 2 == 0)
