@@ -19,12 +19,25 @@ private
     end
 
     def userlog_default
-        {   
-            :except => [:created_at, :updated_at,:password_digest],
-            :include => {
-                :characters=>{}
+            {   
+                :except => [:created_at, :updated_at,:password_digest],
+                :include => {
+                    :characters=>{
+                        :methods => [:game_session],
+                        :except => [:created_at,:updated_at],
+                        # :include => {
+                        #     :games => {
+                        #         :only => [:description,:id],
+                        #         :include =>{
+                        #             :map => {
+                        #                 :only => [:name]
+                        #             }
+                        #         }
+                        #     }
+                        # }
+                    }
+                }
             }
-        }
     end 
 
 end
