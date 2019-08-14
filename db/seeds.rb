@@ -8,24 +8,24 @@
 
 #User seeds
 gian = User.create!(username: "gian", password:"password")
-rob = User.create!(username: "robert", password:"password1!")
-natany = User.create!(username: "natany", password:"password1!" )
-peter = User.create!(username: "peter", password:"password1!" )
-matt = User.create!(username: "matt", password:"password1!" )
-joseph = User.create!(username: "joseph", password:"password1!" )
+rob = User.create!(username: "robert", password:"password")
+player1 = User.create!(username: "player1", password:"password")
+player2 = User.create!(username: "player2", password:"password")
+player3 = User.create!(username: "player3", password:"password")
+player4 = User.create!(username: "player4", password:"password")
 
 
 #Character seeds
 stasis = Character.find_or_create_by(name:"Stasis", max_hp:40, attack_damage:10, attack_range:1, user_id: gian.id, race: "human")
 gneisenau = Character.find_or_create_by(name:"Gneisenau", max_hp:40, attack_damage:10, attack_range:1,user_id: gian.id, race: "lizard")
 hashmalum = Character.find_or_create_by(name:"Hashmalum", max_hp:40, attack_damage:10, attack_range:1, user_id: gian.id, race: "wizard")
-g = Character.find_or_create_by(name:"Gian", max_hp:40, attack_damage:10, attack_range:1,user_id: gian.id, race: "human")
+gi = Character.find_or_create_by(name:"Gian", max_hp:40, attack_damage:10, attack_range:1,user_id: gian.id, race: "human")
 
 r = Character.find_or_create_by(name:"Rob", max_hp:40, attack_damage:10, attack_range:1,user_id: rob.id, race: "wizard")
-n = Character.find_or_create_by(name:"Natany", max_hp:40, attack_damage:10, attack_range:1,user_id: natany.id, race: "elf")
-p = Character.find_or_create_by(name:"Peter", max_hp:40, attack_damage:10, attack_range:1,user_id: peter.id, race: "lizard")
-m = Character.find_or_create_by(name:"Matthew", max_hp:40, attack_damage:10, attack_range:1,user_id: matt.id, race: "wizard")
-j = Character.find_or_create_by(name:"Joseph", max_hp:40, attack_damage:10, attack_range:1,user_id: joseph.id, race: "human")
+p1_char = Character.find_or_create_by(name:"Player1", max_hp:40, attack_damage:10, attack_range:1,user_id: player1.id, race: "elf")
+p2_char = Character.find_or_create_by(name:"Player2", max_hp:40, attack_damage:10, attack_range:1,user_id: player2.id, race: "lizard")
+p3_char = Character.find_or_create_by(name:"Player3", max_hp:40, attack_damage:10, attack_range:1,user_id: player3.id, race: "wizard")
+p4_char = Character.find_or_create_by(name:"Player4", max_hp:40, attack_damage:10, attack_range:1,user_id: player4.id, race: "human")
 
 robin = Character.find_or_create_by(name:"Robin", max_hp: 40, attack_damage:10, attack_range:1, user_id: rob.id, race: "elf")
 
@@ -146,24 +146,47 @@ GameMonster.find_or_create_by(game_id: playerstest.id, monster_id: masked_orc.id
     while(x_cords<pvp_test_zone.x_map_size) do
         while(y_cords<pvp_test_zone.y_map_size) do
             if(x_cords == 0 && y_cords == 0)
-                CharacterGame.find_or_create_by(character_id: g.id, game_id: stress_test.id, x_coordinate:x_cords, y_coordinate:y_cords,hp: g.max_hp, max_hp: g.max_hp)
+                CharacterGame.find_or_create_by(character_id: gi.id, game_id: stress_test.id, x_coordinate:x_cords, y_coordinate:y_cords,hp: gi.max_hp, max_hp: gi.max_hp)
             elsif(x_cords == 0 && y_cords == 15)
-                CharacterGame.find_or_create_by(character_id: r.id, game_id: stress_test.id, x_coordinate:x_cords, y_coordinate:y_cords,hp: r.max_hp, max_hp: r.max_hp)
+                CharacterGame.find_or_create_by(character_id: p1_char.id, game_id: stress_test.id, x_coordinate:x_cords, y_coordinate:y_cords,hp: p1_char.max_hp, max_hp: p1_char.max_hp)
             elsif(x_cords == 15 && y_cords == 0)
-                CharacterGame.find_or_create_by(character_id: p.id, game_id: stress_test.id, x_coordinate:x_cords, y_coordinate:y_cords,hp: p.max_hp, max_hp: p.max_hp)
+                CharacterGame.find_or_create_by(character_id: p2_char.id, game_id: stress_test.id, x_coordinate:x_cords, y_coordinate:y_cords,hp: p2_char.max_hp, max_hp: p2_char.max_hp)
             elsif(x_cords == 15 && y_cords == 15)
-                CharacterGame.find_or_create_by(character_id: m.id, game_id: stress_test.id, x_coordinate:x_cords, y_coordinate:y_cords,hp: m.max_hp, max_hp: m.max_hp)
+                CharacterGame.find_or_create_by(character_id: p3_char.id, game_id: stress_test.id, x_coordinate:x_cords, y_coordinate:y_cords,hp: p3_char.max_hp, max_hp: p3_char.max_hp)
             elsif(x_cords == 8 && y_cords == 8)
-                CharacterGame.find_or_create_by(character_id: n.id, game_id: stress_test.id, x_coordinate:x_cords, y_coordinate:y_cords,hp: n.max_hp, max_hp: n.max_hp)
-            elsif(y_cords % 2 == 0 && x_cords % 2 == 1)
-                GameMonster.find_or_create_by(game_id: stress_test.id, monster_id: masked_orc.id,x_coordinate: x_cords, y_coordinate: y_cords, hp:masked_orc.max_hp, max_hp:masked_orc.max_hp)
-            elsif(y_cords % 2 == 1 && x_cords % 2 == 0)
-                GameMonster.find_or_create_by(game_id: stress_test.id, monster_id: skel.id,x_coordinate: x_cords, y_coordinate: y_cords, hp:skel.max_hp, max_hp:skel.max_hp)
+                CharacterGame.find_or_create_by(character_id: p4_char.id, game_id: stress_test.id, x_coordinate:x_cords, y_coordinate:y_cords,hp: p4_char.max_hp, max_hp: p4_char.max_hp)
             end
             y_cords += 1
         end
         y_cords = 0
         x_cords += 1
     end
+
+GameMonster.find_or_create_by(game_id: stress_test.id, monster_id: masked_orc.id,x_coordinate: 6, y_coordinate: 6, hp:masked_orc.max_hp, max_hp:masked_orc.max_hp)
+GameMonster.find_or_create_by(game_id: stress_test.id, monster_id: masked_orc.id,x_coordinate: 6, y_coordinate: 7, hp:masked_orc.max_hp, max_hp:masked_orc.max_hp)
+GameMonster.find_or_create_by(game_id: stress_test.id, monster_id: masked_orc.id,x_coordinate: 6, y_coordinate: 8, hp:masked_orc.max_hp, max_hp:masked_orc.max_hp)
+GameMonster.find_or_create_by(game_id: stress_test.id, monster_id: masked_orc.id,x_coordinate: 6, y_coordinate: 9, hp:masked_orc.max_hp, max_hp:masked_orc.max_hp)
+GameMonster.find_or_create_by(game_id: stress_test.id, monster_id: masked_orc.id,x_coordinate: 6, y_coordinate: 10, hp:masked_orc.max_hp, max_hp:masked_orc.max_hp)
+GameMonster.find_or_create_by(game_id: stress_test.id, monster_id: masked_orc.id,x_coordinate: 7, y_coordinate: 6, hp:masked_orc.max_hp, max_hp:masked_orc.max_hp)
+GameMonster.find_or_create_by(game_id: stress_test.id, monster_id: masked_orc.id,x_coordinate: 7, y_coordinate: 7, hp:masked_orc.max_hp, max_hp:masked_orc.max_hp)
+GameMonster.find_or_create_by(game_id: stress_test.id, monster_id: masked_orc.id,x_coordinate: 7, y_coordinate: 8, hp:masked_orc.max_hp, max_hp:masked_orc.max_hp)
+GameMonster.find_or_create_by(game_id: stress_test.id, monster_id: masked_orc.id,x_coordinate: 7, y_coordinate: 9, hp:masked_orc.max_hp, max_hp:masked_orc.max_hp)
+GameMonster.find_or_create_by(game_id: stress_test.id, monster_id: masked_orc.id,x_coordinate: 7, y_coordinate: 10, hp:masked_orc.max_hp, max_hp:masked_orc.max_hp)
+
+GameMonster.find_or_create_by(game_id: stress_test.id, monster_id: skel.id,x_coordinate: 9, y_coordinate: 6, hp:skel.max_hp, max_hp:skel.max_hp)
+GameMonster.find_or_create_by(game_id: stress_test.id, monster_id: skel.id,x_coordinate: 9, y_coordinate: 7, hp:skel.max_hp, max_hp:skel.max_hp)
+GameMonster.find_or_create_by(game_id: stress_test.id, monster_id: skel.id,x_coordinate: 9, y_coordinate: 8, hp:skel.max_hp, max_hp:skel.max_hp)
+GameMonster.find_or_create_by(game_id: stress_test.id, monster_id: skel.id,x_coordinate: 9, y_coordinate: 9, hp:skel.max_hp, max_hp:skel.max_hp)
+GameMonster.find_or_create_by(game_id: stress_test.id, monster_id: skel.id,x_coordinate: 9, y_coordinate: 10, hp:skel.max_hp, max_hp:skel.max_hp)
+GameMonster.find_or_create_by(game_id: stress_test.id, monster_id: skel.id,x_coordinate: 10, y_coordinate: 6, hp:skel.max_hp, max_hp:skel.max_hp)
+GameMonster.find_or_create_by(game_id: stress_test.id, monster_id: skel.id,x_coordinate: 10, y_coordinate: 7, hp:skel.max_hp, max_hp:skel.max_hp)
+GameMonster.find_or_create_by(game_id: stress_test.id, monster_id: skel.id,x_coordinate: 10, y_coordinate: 8, hp:skel.max_hp, max_hp:skel.max_hp)
+GameMonster.find_or_create_by(game_id: stress_test.id, monster_id: skel.id,x_coordinate: 10, y_coordinate: 9, hp:skel.max_hp, max_hp:skel.max_hp)
+GameMonster.find_or_create_by(game_id: stress_test.id, monster_id: skel.id,x_coordinate: 10, y_coordinate: 10, hp:skel.max_hp, max_hp:skel.max_hp)
+
+GameMonster.find_or_create_by(game_id: stress_test.id, monster_id: skel.id,x_coordinate: 8, y_coordinate: 6, hp:skel.max_hp, max_hp:skel.max_hp)
+GameMonster.find_or_create_by(game_id: stress_test.id, monster_id: skel.id,x_coordinate: 8, y_coordinate: 7, hp:skel.max_hp, max_hp:skel.max_hp)
+GameMonster.find_or_create_by(game_id: stress_test.id, monster_id: masked_orc.id,x_coordinate: 8, y_coordinate: 9, hp:masked_orc.max_hp, max_hp:masked_orc.max_hp)
+GameMonster.find_or_create_by(game_id: stress_test.id, monster_id: masked_orc.id,x_coordinate: 8, y_coordinate: 10, hp:masked_orc.max_hp, max_hp:masked_orc.max_hp)
 
     puts "FINISHED SEEDING!!"
