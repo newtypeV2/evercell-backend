@@ -22,12 +22,15 @@ hashmalum = Character.find_or_create_by(name:"Hashmalum", max_hp:40, attack_dama
 gi = Character.find_or_create_by(name:"Gian", max_hp:40, attack_damage:10, attack_range:1,user_id: gian.id, race: "human")
 
 r = Character.find_or_create_by(name:"Rob", max_hp:40, attack_damage:10, attack_range:1,user_id: rob.id, race: "wizard")
+robin = Character.find_or_create_by(name:"Robin", max_hp: 40, attack_damage:10, attack_range:1, user_id: rob.id, race: "elf")
+
+
 p1_char = Character.find_or_create_by(name:"Player1", max_hp:40, attack_damage:10, attack_range:1,user_id: player1.id, race: "elf")
 p2_char = Character.find_or_create_by(name:"Player2", max_hp:40, attack_damage:10, attack_range:1,user_id: player2.id, race: "lizard")
 p3_char = Character.find_or_create_by(name:"Player3", max_hp:40, attack_damage:10, attack_range:1,user_id: player3.id, race: "wizard")
 p4_char = Character.find_or_create_by(name:"Player4", max_hp:40, attack_damage:10, attack_range:1,user_id: player4.id, race: "human")
 
-robin = Character.find_or_create_by(name:"Robin", max_hp: 40, attack_damage:10, attack_range:1, user_id: rob.id, race: "elf")
+
 
 #Tile seeds
 floor_1 = Tile.find_or_create_by(name: "floor_1", passover:true)
