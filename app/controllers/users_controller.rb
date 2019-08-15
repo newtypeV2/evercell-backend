@@ -11,16 +11,6 @@ class UsersController < ApplicationController
                     :characters=>{
                         :methods => [:game_session],
                         :except => [:created_at,:updated_at],
-                        # :include => {
-                        #     :games => {
-                        #         :only => [:description],
-                        #         :include =>{
-                        #             :map => {
-                        #                 :only => [:name]
-                        #             }
-                        #         }
-                        #     }
-                        # }
                     }
                 }
             }
