@@ -9,9 +9,15 @@ class CharacterGameChannel < ApplicationCable::Channel
   end
   
   def receive(data)
-    if data["player"] != nil
+    if (!data["player"].nil?)
       playerInstance = CharacterGame.find(data["player"]["id"])
-      playerInstance.update(x_coordinate:data["player"]["x_coordinate"] ,y_coordinate:data["player"]["y_coordinate"], direction: data["player"]["direction"])
+      playerInstance.update(x_coordinate:data["player"]["x_coordinate"] ,y_coordinate:data["player"]["y_coordinate"], direction: data["player"]["direction"], hp: data["player"]["hp"])
+    elsif (!data["respawn"].nil?)
+      data["player"] = data.delete("respawn")
+      game_map = Game.find(data["gameId"]).map
+      data["player"]["x_coordinate"] = rand(0...game_map.x_map_size)
+      data["player"]["y_coordinate"] = rand(0...game_map.y_map_size)
+      data["player"]["hp"] = data["player"]["max_hp"]
     end
     # data["monsters"] = move_monster(data["game_id"])
     ActionCable.server.broadcast('character_game', data)

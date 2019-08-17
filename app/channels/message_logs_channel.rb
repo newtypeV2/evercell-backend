@@ -9,6 +9,10 @@ class MessageLogsChannel < ApplicationCable::Channel
   end
 
   def receive(data)
+    if (!data["body"].nil?)
+      # Message.create(user_id: data["userId"], game_id: data["gameId"], body: data["body"])
+      data["message"] = "#{data["sender"]}: #{data["body"]}"
+    end
     ActionCable.server.broadcast('message_log_channel',data)
   end
 end
