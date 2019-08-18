@@ -12,6 +12,11 @@ class CharacterGameChannel < ApplicationCable::Channel
     if (!data["player"].nil?)
       playerInstance = CharacterGame.find(data["player"]["id"])
       playerInstance.update(x_coordinate:data["player"]["x_coordinate"] ,y_coordinate:data["player"]["y_coordinate"], direction: data["player"]["direction"], hp: data["player"]["hp"])
+    elsif(!data["players"].nil?)
+      data["players"].each do |player|
+        playerInstance = CharacterGame.find(player["id"])
+        playerInstance.update(x_coordinate:player["x_coordinate"] ,y_coordinate:player["y_coordinate"], direction: player["direction"], hp: player["hp"])
+      end
     elsif (!data["respawn"].nil?)
       data["player"] = data.delete("respawn")
       game_map = Game.find(data["gameId"]).map
