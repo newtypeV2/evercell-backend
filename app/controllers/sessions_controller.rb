@@ -4,6 +4,7 @@ class SessionsController < ApplicationController
         user = User.find_by(username: params[:username])
             if user && user.authenticate(params[:password])
                 token = encode({user_id: user.id})
+                
                 render json: {
                     userinfo: user.to_json(userlog_default),
                     token: token
@@ -13,7 +14,6 @@ class SessionsController < ApplicationController
             end
     end
     
-# end
 
 
 private

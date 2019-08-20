@@ -57,6 +57,7 @@ ogre = Monster.find_or_create_by(name: "ogre", max_hp:20, attack_damage:8, attac
 masked_orc = Monster.find_or_create_by(name: "masked_orc", max_hp:5, attack_damage:4, attack_range: 1)
 skel = Monster.find_or_create_by(name: "skeleton", max_hp:2, attack_damage:1, attack_range: 1)
 
+
 #Map seeds
 testzone = Map.find_or_create_by(name:"Test Area", x_map_size:10, y_map_size:10)
 widetestzone = Map.find_or_create_by(name: "Ultra Wide Test Area", x_map_size: 48, y_map_size: 16)

@@ -9,6 +9,7 @@ class AnimationChannel < ApplicationCable::Channel
   end
 
   def receive(data)
+    byebug
     ActionCable.server.broadcast('animation_channel',data)
   end
 
