@@ -26,10 +26,6 @@ private
         JWT.encode(payload,secret_key(), 'HS256')
     end
 
-    def decode(token)
-        JWT.decode(token,secret_key, { algorithm: 'HS256' })[0]
-    end
-
     def secret_key
         "vHipwIAnguoETsdW"
     end
