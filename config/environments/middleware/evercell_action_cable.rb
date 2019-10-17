@@ -1,4 +1,4 @@
-
+require 'faye/websocket'
 class EvercellActionCable
     def initialize(app, options={})
       @app = app
