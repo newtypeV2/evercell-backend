@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.1'
-gem 'bundler', '>=2.0.1'
 gem 'anycable-rails'
 gem 'redis' , '>= 4.0'
 gem 'jwt'
