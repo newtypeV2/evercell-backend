@@ -52,7 +52,7 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  ip=Socket.ip_address_list.detect{|intf| intf.ipv4_private?}
+  # ip=Socket.ip_address_list.detect{|intf| intf.ipv4_private?}
   
   # config.action_cable.mount_path = '/cable'
   # config.action_cable.url = "ws://localhost:3500/cable"
