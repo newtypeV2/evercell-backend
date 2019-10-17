@@ -13,7 +13,7 @@ test:
 production:
   adapter: redis
   url: <%= ENV.fetch("REDISTOGO_URL") { "redis://dory.redistogo.com:11599/1" } %>
-  :password: ENV.fetch("SECRET_PASS")
+  :password: ENV["SECRET_PASS"]
   :inline: true
   :timeout: 1
   channel_prefix: evercell-backend_production
