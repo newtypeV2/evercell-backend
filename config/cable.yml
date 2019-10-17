@@ -17,6 +17,14 @@ production:
   # url: <%= ENV.fetch("REDIS_URL") { "redis://10.113.106.139:6379/1" } %>
   # channel_prefix: evercell-backend_production
 
+production: &production
+  :url: ENV['REDISTOGO_URL']
+  :host: dory.redistogo.com
+  :port: 10272
+  :password: ENV['SECRET_PASS']
+  :inline: true
+  :timeout: 1
+
 # production: *redis
 # development: *redis
 # test: *redis
