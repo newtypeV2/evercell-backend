@@ -83,7 +83,7 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  ip=Socket.ip_address_list.detect{|intf| intf.ipv4_private?}
+  # ip=Socket.ip_address_list.detect{|intf| intf.ipv4_private?}
   # config.action_cable.mount_path = '/cable'
   # config.action_cable.url = "ws://localhost:3500/cable"
   # config.action_cable.url = "ws://"+ip.ip_address+":3500/cable"

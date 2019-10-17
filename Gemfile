@@ -2,8 +2,8 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.1'
-gem 'anycable-rails'
-gem 'redis' , '>= 4.0'
+# gem 'anycable-rails'
+# gem 'redis' , '>= 4.0'
 gem 'jwt'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
