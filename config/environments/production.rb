@@ -33,8 +33,9 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   # Mount Action Cable outside main process or domain
-  # config.action_cable.mount_path = nil
-  # config.action_cable.url = 'wss://example.com/cable'
+  config.action_cable.mount_path = '/cable'
+  config.action_cable.url = 'wss://evercell-gg.herokuapp.com/cable'
+  config.action_cable.allowed_request_origins = [/http:\/\/*/, /https:\/\/*/]
   # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
@@ -88,6 +89,6 @@ Rails.application.configure do
   # config.action_cable.url = "ws://localhost:3500/cable"
   # config.action_cable.url = "ws://"+ip.ip_address+":3500/cable"
   Rails.application.config.action_cable.allow_same_origin_as_host = false
-  config.action_cable.allowed_request_origins = [/http:\/\/*/, /https:\/\/*/, /ws:\/\/*/]
+  # config.action_cable.allowed_request_origins = [/http:\/\/*/, /https:\/\/*/, /ws:\/\/*/]
 
 end
