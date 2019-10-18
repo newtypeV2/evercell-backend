@@ -7,9 +7,9 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins 'https://evercell.now.sh/'
+    origins 'https://evercell.now.sh'
 
-    resource 'https://evercell.now.sh/',
+    resource '*',
       headers: :any,
       methods: [:get, :post, :put, :patch, :delete, :options, :head]
   end
