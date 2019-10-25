@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
     
     def new
-        user = User.find_by(username: params[:username])
+        user = User.find_by(username: params[:username].downcase)
             if user && user.authenticate(params[:password])
                 token = encode({user_id: user.id})
                 render json: {
